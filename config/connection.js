@@ -9,10 +9,13 @@ var connection = mysql.createConnection({
 
   // Your password
   password: "2648769853",
-  database: "bamazon"
+  database: "burgers_db"
 });
 connection.connect(function(err) {
-  if (err) throw err;
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
   console.log("Connected!");
 });
 

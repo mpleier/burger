@@ -1,6 +1,29 @@
 var orm = require('../config/orm.js');
 
 
-    * Also inside `burger.js`, create the code that will call the ORM functions using burger specific input for the ORM.
 
-    * Export at the end of the `burger.js` file.
+var burgers = {
+
+    selectAll: function(cb) {
+        orm.selectAll("burgers", function(res) {
+            cb(res);
+        });
+    },
+
+    insertOne: function(name, cb) {
+        orm.insertOne("burgers", "burger_name", "'" + name + "'", function(res) {
+            cb(res);
+        });
+    },
+
+    updateOne: function(id, cb) {
+        orm.updateOne("burgers", "devoured", "true", "id", id, function(res) {
+            cb(res);
+        });
+    }
+};
+
+
+
+
+module.exports = burgers;
