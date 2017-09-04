@@ -12,12 +12,14 @@ var burgers = {
 
     insertOne: function(name, cb) {
         orm.insertOne("burgers", "burger_name", "'" + name + "'", function(res) {
-            cb(res);
+            // cb(res);
+            console.log(res);
         });
+
     },
 
     updateOne: function(id, cb) {
-        orm.updateOne("burgers", "devoured", "true", "id", id, function(res) {
+        orm.updateOne("burgers", "devoured = 1", id, function(res) {
             cb(res);
         });
     }

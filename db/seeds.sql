@@ -4,3 +4,4 @@ USE burgers_db;
 INSERT INTO burgers (burger_name) VALUES ('Beef Double Cheese Burger.');
 INSERT INTO burgers (burger_name) VALUES ('Chicken Bacon Burger.');
 INSERT INTO burgers (burger_name) VALUES ('Happy Meal Burger.');
+INSERT INTO burgers (burger_name, devoured) VALUES ('Happy Meal Burger.', 1);

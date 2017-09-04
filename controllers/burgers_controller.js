@@ -19,19 +19,16 @@ router.post("/", function(req, res) {
     req.body.burger_name
   ], [
     req.body
-  ], function() {
+  ]);
     res.redirect("/");
-  });
 });
 
-router.put("/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+router.post("/:id", function(req, res) {
+  var condition =  req.params.id;
 
   console.log("condition", condition);
 
-  burger.updateOne({
-    devoured: true
-  }, condition, function() {
+  burger.updateOne(condition, function() {
     res.redirect("/");
   });
 });

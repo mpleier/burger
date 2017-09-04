@@ -1,8 +1,9 @@
 <h1>Burgers!</h1>
-
+<div id="wrap">
+<div id="div1">
 <h2>Uneaten burgers!</h2>
 
-<ul>
+<ol>
   {{#each burger}}
     {{#unless this.devoured}}
       <li>
@@ -15,28 +16,29 @@
       </li>
     {{/unless}}
   {{/each}}
-</ul>
+</ol>
+</div>
 
 
 
-
+<div id="div2">
 <h2>Eaten burgers!</h2>
 
-<ul>
+<ol>
   {{#each burger}}
     {{#if this.devoured}}
       <li>
         {{this.burger_name}}
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="true">
-          <button type="submit">Devour!</button>
-        </form>
+
       </li>
     {{/if}}
   {{/each}}
-</ul>
+</ol>
+</div>
+</div>
 
+<div id="div3">
 <h2>Order a burger:</h2>
 <form class="create-update-form" action="/" method="POST">
 
@@ -52,3 +54,4 @@
 
   <button type="submit">Order Up!</button>
 </form>
+</div>

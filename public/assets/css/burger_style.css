@@ -1,4 +1,40 @@
+body{
+  text-align: center;
+}
 img {
   max-width:20%;
   max-height:20%;
+}
+
+li {
+  padding: 5px;
+  margin: 5px;
+  background: #faebd7;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+#div1{
+  float:left;
+}
+#div2{
+  float:left;
+}
+#div3{
+  clear:both;
+}
+#wrap{
+  display: table;
+  margin: 0 auto;
 }

@@ -46,28 +46,32 @@ var orm = {
         queryString += ") ";
         queryString += "VALUES (";
         queryString += vals;
-        queryString += ") ";
+        queryString += ")";
 
         console.log(queryString);
 
-        connection.query(queryString, vals, cb, function(err, result) {
+        connection.query(queryString, cb, function(err, result) {
           if (err) {
             throw err;
           }
-          cb(result);
+          console.log(result);
+          // cb(result);
         });
       },
 
-updateOne: function updateOne(table, attrib, val, id, name){
+updateOne: function updateOne(table, attrib, condition, cb){
+console.log(condition);
   var queryString = "UPDATE " + table;
-
   queryString += " SET ";
-  queryString += objToSql(objColVals);
+  queryString += "devoured = 1";
   queryString += " WHERE ";
-  queryString += condition;
+  queryString += "id = " + parseInt(condition);
+//
+// var queryString = "UPDATE burgers SET devoured = 1 WHERE id = 2";
+
 
   console.log(queryString);
-  connection.query(queryString, cb, function(err, result) {
+  connection.query(queryString, function(err, result) {
     if (err) {
       throw err;
     }
